@@ -1,0 +1,2 @@
+Ceci est une chaine
+avec des " et des ' voire des \

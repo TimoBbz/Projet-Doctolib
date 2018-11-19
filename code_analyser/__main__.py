@@ -13,6 +13,7 @@ import analyse_comments
 import analyse_tests
 import extract_file
 import lines_functions_counter
+import analyse_redundancy
 import sys
 import json
 
@@ -60,6 +61,14 @@ def from_ruby_to_json():
     #counting comments
 
     dico['nb_comments']=analyse_comments.count_all_comments(main_list_of_string)
+
+    #counting number of same lines
+
+    dico['nb_repeated_lines']=analyse_redundancy.count_same_lines(main_list_of_string)
+
+    #getting redundancy coeff
+
+    dico['redundancy coeff']=analyse_redundancy.code_similarity(main_list_of_string)
 
     with open(path[:len(path)-3]+"Results.json", "w+") as my_file:
         json.dump(dico, my_file)

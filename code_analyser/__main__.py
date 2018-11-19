@@ -16,10 +16,10 @@ import lines_functions_counter
 import sys
 import json
 
-path=sys.argv[1]
-path_test=path[:len(path)-3]+"Test"+path[len(path)-3:]
+file_path=sys.argv[1]
 
-def from_ruby_to_dico():
+
+def from_ruby_to_json(path=file_path):
     """
 
     This function will gather all the metrics we have, and put it in a dictionnary then
@@ -28,6 +28,8 @@ def from_ruby_to_dico():
 
 
     """
+
+    path_test = path[:len(path) - 3] + "Test" + path[len(path) - 3:]
 
     #gathering the string we need
 
@@ -57,4 +59,4 @@ def from_ruby_to_dico():
 
     print("The JSON results file is in the same directory as your file")
 
-from_ruby_to_dico()
+from_ruby_to_json()

@@ -1,0 +1,35 @@
+Planning codingweek
+
+JOUR 1 : lundi 19 nov
+
+	MVP1 : 
+	- fonction convertisseur ruby -> string
+	- fonction compte nb de fonctions
+	- fonction compte nb lignes de code
+	- fonction compte nb de commentaires
+	- fonction compte nb de tests
+	- fonction convertisseur données -> json
+
+
+JOUR 2 : mercredi 21 nov
+	
+	MVP2 : 
+	- fonction duplication de code (pourcentage de répétition de blocs)
+	- fonction style (nom des variables/convention)
+	- fonction qualité des tests (nb de asserts (moy par test), rechercher testcoverage pr ruby ?)
+
+
+JOUR 3 : jeudi 22 nov
+
+	MVP3 : 
+	- fonction recup code depuis BDD/API/internet
+	- fonction comparaison de code (pourcentage de resemblance, trouver une limite)
+	- fonction antiplagiat combine les deux précédentes
+
+JOUR 4 : vendredi 24 nov matin
+	
+	MVP4 : 
+	- fonctions pr établir un score en fct des résultats de chaque fct
+	- fonctions pr établir un classement des candidats selon différents critères (critères: TESTS/COMMENTAIRES/ORIGINALITE/STYLE/GENERAL)
+	- fonction pr donner un niveau (très bon, moyen, mauvais) en coupant le classement en 3
+

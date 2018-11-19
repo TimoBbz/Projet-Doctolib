@@ -19,7 +19,7 @@ def functions_counter(list_of_strings) :
         assert type(list_of_strings) == list
         c_def = 0
         for line in list_of_strings :
-            if line[0:3] == 'def' :
+            if line[0:5] == '  def' :
                 c_def += 1
         return (c_def)
     except AssertionError :

@@ -1,5 +1,9 @@
-"""This module contains two functions : the goal is to analyze the comments of a ruby document that
-we have as a list of strings"""
+"""
+
+This module contains two functions : the goal is to analyze the comments of a ruby document that
+we have as a list of strings
+
+"""
 
 def count_hashtags(list_of_string):
     """
@@ -32,7 +36,7 @@ def count_multiline_comments(list_of_string):
     for string in list_of_string:
         if "=begin" in string:
             number_of_begins+=1
-        return number_of_begins
+    return number_of_begins
 
 def count_all_comments(list_of_string):
     """
@@ -40,7 +44,7 @@ def count_all_comments(list_of_string):
     Counting all the comments regardless of the type of the comment (multiline or hashtag)
     :param list_of_string:
     :return: an integer number
-     
+
     """
     return count_multiline_comments(list_of_string)+count_hashtags(list_of_string)
 

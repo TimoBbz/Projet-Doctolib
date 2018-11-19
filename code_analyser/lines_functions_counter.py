@@ -1,4 +1,4 @@
-def lines_counter(liste) :
+def lines_counter(liste) :  
     """paramètre : liste de chaîne de caractères, chaque élément est une ligne du code du candidat
     retourne le nombre de lignes de code non vides"""
     try :

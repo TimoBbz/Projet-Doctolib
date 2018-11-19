@@ -16,10 +16,8 @@ import lines_functions_counter
 import sys
 import json
 
-file_path=sys.argv[1]
 
-
-def from_ruby_to_json(path=file_path):
+def from_ruby_to_json():
     """
 
     This function will gather all the metrics we have, and put it in a dictionnary then
@@ -28,8 +26,17 @@ def from_ruby_to_json(path=file_path):
 
 
     """
+    #This is just to check you entered a file_path whether in the shell or as an argument
+    try:
+        file_path = sys.argv[1]
+    except:
+        # If you didn't pass any argument in the sell, file_path will have this value for now
+        print("Please enter a file path, in your shell : python path_to_code_analyser path_to_your_ruby_file")
+        return None
+
 
     path_test = path[:len(path) - 3] + "Test" + path[len(path) - 3:]
+
 
     #gathering the string we need
 

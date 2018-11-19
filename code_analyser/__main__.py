@@ -28,7 +28,7 @@ def from_ruby_to_json():
     """
     #This is just to check you entered a file_path whether in the shell or as an argument
     try:
-        file_path = sys.argv[1]
+        path = sys.argv[1]
     except:
         # If you didn't pass any argument in the sell, file_path will have this value for now
         print("Please enter a file path, in your shell : python path_to_code_analyser path_to_your_ruby_file")

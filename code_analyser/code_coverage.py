@@ -7,7 +7,7 @@ def code_coverage_estimation(path, path_test):
     Entry: path of the file and path of the test file
     Return: fraction of the number of tests on the number of functions"""
     nb_functions = lfc.functions_counter(ef.to_list(path))
-    nb_test = lfc.tests_counter(ef.to_list(path_test))
+    nb_test = lfc.nb_counter(ef.to_list(path_test))
     try:
         return nb_test/nb_functions
     except ZeroDivisionError:

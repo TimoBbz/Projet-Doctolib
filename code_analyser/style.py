@@ -63,7 +63,7 @@ def count_solo_parenthesis(string):
     return abs(ratio_parenthese)
 
 
-def count_hooks(string):
+def count_solo_hooks(string):
     ratio_hooks = 0
     for caracter in string:
         if caracter == "[":

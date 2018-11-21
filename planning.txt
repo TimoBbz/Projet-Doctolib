@@ -23,7 +23,7 @@ JOUR 3 : jeudi 22 nov
 
 	MVP3 : 
 	- fonction recup code depuis BDD/API/internet
-	- fonction comparaison de code (pourcentage de resemblance, trouver une limite)
+	- fonction comparaison de code (pourcentage de ressemblance, trouver une limite)
 	- fonction antiplagiat combine les deux précédentes
 
 JOUR 4 : vendredi 24 nov matin

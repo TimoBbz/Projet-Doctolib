@@ -1,4 +1,4 @@
-from code_analyser import extract_file as ef
+import extract_file as ef
 from os import listdir
 from os.path import isfile, join
 import numpy as np
@@ -28,5 +28,5 @@ def average_lines_similarity(code_list, samplepathlist):
 def get_files_list(directorypath):
     '''return a list of the files contained in the directory
     :param directorypath : path to the directory'''
-    onlyfiles = [f for f in listdir(directorypath) if isfile(join(directorypath, f))]
+    onlyfiles = [join(directorypath,f) for f in listdir(directorypath) if isfile(join(directorypath, f))]
     return onlyfiles

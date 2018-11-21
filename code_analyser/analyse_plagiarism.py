@@ -14,7 +14,5 @@ def average_lines_similarity(code_list, samplepathlist):
         for line in code_list:
             if line in code_list2:
                 compteur+=1
-        print(code_list)
-        print(len(code_list),len(samplepathlist))
         similarity+=compteur/len(code_list)/len(samplepathlist)
     return similarity*100

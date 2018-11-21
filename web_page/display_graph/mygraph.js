@@ -6,7 +6,7 @@
         datasets: [
            {
            label: "Tous les voyageurs",
-           data: [227, 331, 11]
+           data: [227, 0, 0]
            },{
            label: "1ère Classe",
            data: [107, 115, 2]

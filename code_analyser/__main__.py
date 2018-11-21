@@ -103,7 +103,7 @@ def from_ruby_to_json():
     dico['snake_case_errors'] = style.snake_case_function(main_list_of_string)
 
     with open(path[:len(path)-3]+"Results.json", "w+") as my_file:
-        json.dump(dico, my_file)
+        json.dump(dico, my_file, indent=4)
 
     print("The JSON results file is in the same directory as your file")
 

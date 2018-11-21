@@ -2,19 +2,27 @@
     var myChart = new Chart(myContext, {
       type: 'bar',
       data: {
-        labels: ["Féminin", "Masculin", "Animaux"],
+        labels: ["Qualité des tests", "Absence de plagiat", "Qualité de la syntaxe"],
         datasets: [
            {
-           label: "Tous les voyageurs",
-           data: [227, 0, 0]
+           label: "Candidat 1",
+           data: [6, 4, 3],
+           backgroundColor: 'rgba(255, 99, 132, 0.2)'
            },{
-           label: "1ère Classe",
-           data: [107, 115, 2]
+           label: "Candidat 2",
+           data: [1,2,5],
+           backgroundColor: 'rgba(54, 162, 235, 0.2)'
            },{
-           label: "2ème Classe",
-           data: [120, 116, 9]
+           label: "Candidat 3",
+           data: [4,0,2],
+           backgroundColor: 'rgba(255, 206, 86, 0.2)'
            }
-        ]
+        ],
+      },
+      options:{title:{
+         display:true,
+         text:"Résultats des candidats"
       }
     }
-  )
+  }
+)

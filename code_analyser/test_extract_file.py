@@ -10,4 +10,3 @@ def test_to_string():
     path = "Examples/test_file.txt"
     assert string == ef.to_string(path)
     assert list == ef.to_list(path)
-

@@ -26,7 +26,7 @@ def functions_counter(list_of_strings):
         print('The parameter is not a list')
 
 
-def nb_counter(list_of_strings):
+def tests_counter(list_of_strings):
     """list_of_strings is obtained with the function to_list
     returns the number of tests"""
     try:

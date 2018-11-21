@@ -1,19 +1,31 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-<title>Upload Doctolib</title>
-</head>
-<body>
-<h1>
-Upload your ruby file
-</h1>
-<form action="" method=post enctype=multipart/form-data>
-<div>
-<input type=file name=file>
-<input type=submit value=Upload></div>
-<div>
-<input type=file name=test_file><input type=submit value=Upload>
-</div>
-</form>
-</body>
+  <head>
+    <title>Upload Doctolib</title>
+  </head>
+  <body>
+    <h1>Enter some information and upload your files</h1>
+    <form action="" method=post enctype=multipart/form-data>
+    <div>
+      Name: <br />
+      <input type="text" name="name" />
+    </div>
+
+    <div>
+      Firstname: <br />
+      <input type="text" name="firstname" />
+    </div>
+    <div>
+      Your file : <br />
+      <input type="file" name="file" />
+    </div>
+
+    <div>
+      Your test file : <br />
+      <input type="file" name="test_file" /><input
+        type="submit"
+        value="Upload"
+      />
+    </div>
+  </body>
 </html>

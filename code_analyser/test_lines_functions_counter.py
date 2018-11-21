@@ -10,5 +10,5 @@ def test_functions_counter():
     assert functions_counter(['  def', 'a', 'z', '  def', '']) == 2
 
 
-def test_nb_counter():
-    assert nb_counter(['  test', 'a', 'z', '  tests', '']) == 2
+def test_tests_counter():
+    assert tests_counter(['  test', 'a', 'z', '  tests', '']) == 2

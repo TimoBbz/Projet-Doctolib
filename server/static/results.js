@@ -1,19 +1,15 @@
-file="file://../uploads/EventCandidatAScores.json"
+///var file=url_for('static', filename='EventCandidatAScores.json')}}
+var file="EventCandidatAScores.json"
 
-function readTextFile(file)
-{
-	var str = "";
-	var txtFile = new File(file);
-	txtFile.open("r");
-	while (!txtFile.eof) {
-		// read each line of text
-		str += txtFile.readln() + "\n";
-	}
-return str;
+function load() {
+  console.log("success");
+  console.log(file)
+  $.getJSON(file, function(data) {
+     console.log( "JSON Data: " + data.tests)
+     console.log("file found")
+  });
 }
-
-    var datas = readTextFile(file);
-
+    load()
     var myContext = document.getElementById("myChart");
     var myChart = new Chart(myContext, {
       type: 'bar',

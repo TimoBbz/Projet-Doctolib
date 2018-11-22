@@ -5,9 +5,15 @@
     <title>Results</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="{{ url_for('static', filename='style_index.css') }}" rel="stylesheet" type="text/css" />
+
   </head>
-  <body style="background-color:#F2F2F2">
-    <div>
+  <body id="box">
+  <h1 class="w3-text-blue">Results</h1>
+  <br>
+    <div class="w3-container w3-card-4">
+
       <canvas id="myChart"></canvas>
       <script type="text/javascript">
         const name = '{{nom}}';
@@ -34,14 +40,6 @@
               ],
             },
             options:{
-               title:{
-                 display:true,
-                 text:"Results : " + firstname + " " + name,
-                 fontSize:40,
-                 fontStyle:'bold',
-                 padding:40,
-                 fontColor:'rgba(54, 162, 235,0.7)'
-               },
                 scales: {
                   yAxes: [{
                       ticks: {
@@ -59,10 +57,10 @@
                 },
                 layout: {
                   padding: {
-                      left: 50,
-                      right: 50,
-                      top: 50,
-                      bottom: 50
+                      left: 10,
+                      right: 10,
+                      top: 30,
+                      bottom: 10
                   }
                 }
               }

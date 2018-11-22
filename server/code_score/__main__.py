@@ -27,7 +27,8 @@ def add_all_scores_to_json():
     "syntax":gs.get_syntax_score(datas_tot),
     "style":gs.get_style_score(datas_tot),
     "redundancy":gs.get_redundancy_score(datas_tot),
-    "plagiarism":gs.get_plagiarism_score(datas_tot)}
+    "plagiarism":gs.get_plagiarism_score(datas_tot),
+    "total":(gs.get_test_score(datas_tot)+gs.get_comments_score(datas_tot)+gs.get_syntax_score(datas_tot)+gs.get_style_score(datas_tot)+gs.get_redundancy_score(datas_tot)+gs.get_plagiarism_score(datas_tot))/6}
 
     with open(path[:len(path) - 12] + "Scores.json", "w+") as my_file:
         json.dump(dico, my_file, indent=4)

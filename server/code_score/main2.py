@@ -13,12 +13,14 @@ def add_all_scores_to_json(path):
     datas_tot = ea.extract_analysis(path)
 
     dico = {}
-    dico = {"tests": gs.get_test_score(datas_tot),
-            "comments": gs.get_comments_score(datas_tot),
-            "syntax": gs.get_syntax_score(datas_tot),
-            "style": gs.get_style_score(datas_tot),
-            "redundancy": gs.get_redundancy_score(datas_tot),
-            "plagiarism": gs.get_plagiarism_score(datas_tot)}
+    dico = {"Tests": gs.get_test_score(datas_tot),
+            "Comments": gs.get_comments_score(datas_tot),
+            "Syntax": gs.get_syntax_score(datas_tot),
+            "Style": gs.get_style_score(datas_tot),
+            "Redundancy": gs.get_redundancy_score(datas_tot),
+            "Plagiarism": gs.get_plagiarism_score(datas_tot),
+            "Total":(gs.get_test_score(datas_tot)+gs.get_comments_score(datas_tot)+gs.get_syntax_score(datas_tot)+gs.get_style_score(datas_tot)+gs.get_redundancy_score(datas_tot)+gs.get_plagiarism_score(datas_tot))/6
+            }
 
     with open(path[:len(path) - 12] + "Scores.json", "w+") as my_file:
         json.dump(dico, my_file, indent=4)

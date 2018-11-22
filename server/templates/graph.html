@@ -20,7 +20,7 @@
         var filepath="../uploads/EventCandidatAScores.json"
         //var file = "{{url_for('static', filename='../uploads/EventCandidatAScores.json')}}";
         console.log(file)
-        ///var file=url_for('static', filename='EventCandidatAScores.json')}}
+        var file="{{url_for('static', filename='EventCandidatAScores.json')}}";
         $.getJSON(file, function(data) {
           var myContext = document.getElementById("myChart");
           console.log(Object.keys(data))

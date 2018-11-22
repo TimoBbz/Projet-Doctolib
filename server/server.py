@@ -1,7 +1,8 @@
 import os
 from flask import Flask, request, redirect, url_for, send_from_directory, render_template
 from code_analyser.main2 import from_ruby_to_json
-# import code_analyser
+from code_score.main2 import add_all_scores_to_json
+
 
 UPLOAD_FOLDER = 'uploads/'
 ALLOWED_EXTENSIONS = set(['rb'])
@@ -51,6 +52,7 @@ def upload_test_file():
 @app.route('/done')
 def uploaded_file():
     from_ruby_to_json('uploads/'+name+first_name+'.rb', 'PastDatas')
+    add_all_scores_to_json('uploads/'+name+first_name+"Results.json")
     return render_template('graph.html', titre='Results', nom=name, prenom=first_name)
 
 

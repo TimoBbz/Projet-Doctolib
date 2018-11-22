@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Résultats Candidats</title>
+    <title>Results</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
   </head>
@@ -16,9 +16,12 @@
         console.log('coucou');
         console.log(name);
         console.log(firstname);
-        var file =
-          "{{url_for('static', filename='../uploads/EventCandidatAResults.json')}}";
+        //var filepath="../uploads/"+name+firstname+"Scores.json"
+        var filepath="../uploads/EventCandidatAScores.json"
+        //var file = "{{url_for('static', filename='../uploads/EventCandidatAScores.json')}}";
+        console.log(file)
         ///var file=url_for('static', filename='EventCandidatAScores.json')}}
+<<<<<<< HEAD
 
         function load() {
           console.log('success');
@@ -58,34 +61,65 @@
               fontSize: 40,
               fontStyle: 'bold',
               padding: 40
+=======
+        $.getJSON(file, function(data) {
+          var myContext = document.getElementById("myChart");
+          console.log(Object.keys(data))
+          var myChart = new Chart(myContext, {
+            type: 'bar',
+            data: {
+              labels:Object.keys(data),
+              datasets: [
+                 {
+                 label: "Candidat 1",
+                 data: Object.values(data),
+                 backgroundColor: 'rgba(255, 99, 132, 0.2)'
+                 },{
+                 label: "Moyenne",
+                 data: [1,2,5,4,6,2],
+                 backgroundColor: 'rgba(54, 162, 235, 0.2)'
+                 }
+              ],
+>>>>>>> 0812bd174dc2899e928e376a3b6f797c1db988b6
             },
-            scales: {
-              yAxes: [
-                {
-                  ticks: {
-                    beginAtZero: true
+            options:{
+               title:{
+                 display:true,
+                 text:"Results : " + name + firstname,
+                 fontSize:40,
+                 fontStyle:'bold',
+                 padding:40
+               },
+                scales: {
+                  yAxes: [{
+                      ticks: {
+                          beginAtZero:true
+                      }
+                  }]
+                },
+                legend:{
+                  display:true,
+                  position:'right',
+                  labels:{
+                    fontSize:20,
+                    padding:10
+                  }
+                },
+                layout: {
+                  padding: {
+                      left: 50,
+                      right: 50,
+                      top: 50,
+                      bottom: 50
                   }
                 }
-              ]
-            },
-            legend: {
-              display: true,
-              position: 'right',
-              labels: {
-                fontSize: 20,
-                padding: 10
-              }
-            },
-            layout: {
-              padding: {
-                left: 50,
-                right: 50,
-                top: 50,
-                bottom: 50
               }
             }
-          }
-        });
+          )
+        }
+        )
+
+
       </script>
     </div>
   </body>

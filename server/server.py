@@ -2,7 +2,7 @@ import os
 from flask import Flask, request, redirect, url_for, send_from_directory, render_template
 from code_analyser.main2 import from_ruby_to_json
 from code_score.main2 import add_all_scores_to_json
-
+import json
 
 UPLOAD_FOLDER = 'uploads/'
 ALLOWED_EXTENSIONS = set(['rb'])
@@ -16,8 +16,8 @@ def allowed_file(filename):
            filename.rsplit('.', 1)[1] in ALLOWED_EXTENSIONS
 
 
-name = "bekaddour"
-first_name = "leila"
+name = ""
+first_name = ""
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -53,7 +53,9 @@ def upload_test_file():
 def uploaded_file():
     from_ruby_to_json('uploads/'+name+first_name+'.rb', 'PastDatas')
     add_all_scores_to_json('uploads/'+name+first_name+"Results.json")
-    return render_template('graph.html', titre='Results', nom=name, prenom=first_name)
+    with open('uploads/'+name+first_name+"Scores.json") as json_file:
+        score_file = json.load(json_file)
+    return render_template('graph.html', titre='Results', nom=name, prenom=first_name, file=score_file)
 
 
 if __name__ == '__main__':

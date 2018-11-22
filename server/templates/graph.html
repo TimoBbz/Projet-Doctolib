@@ -6,21 +6,17 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
   </head>
-  <body>
+  <body style="background-color:#F2F2F2">
     <div>
       <canvas id="myChart"></canvas>
-      <script src="{{url_for('static', filename='results.js')}}"></script>
       <script type="text/javascript">
         const name = '{{nom}}';
         const firstname = '{{prenom}}';
-        //var filepath="../uploads/"+name+firstname+"Scores.json"
-        var filepath="../uploads/EventCandidatAScores.json"
-        //var file = "{{url_for('static', filename='../uploads/EventCandidatAScores.json')}}";
-        console.log(file)
-        var file="{{url_for('static', filename='EventCandidatAScores.json')}}";
-        $.getJSON(file, function(data) {
+        const data={{file|tojson|safe}};
+        console.log(data)
+
           var myContext = document.getElementById("myChart");
-          console.log(Object.keys(data))
+          console.log(Object.keys(data));
           var myChart = new Chart(myContext, {
             type: 'bar',
             data: {
@@ -32,7 +28,7 @@
                  backgroundColor: 'rgba(255, 99, 132, 0.2)'
                  },{
                  label: "Average",
-                 data: [1,2,5,4,6,2],
+                 data: [3,2,3,4,5,2,3.16],
                  backgroundColor: 'rgba(54, 162, 235, 0.2)'
                  }
               ],
@@ -43,7 +39,8 @@
                  text:"Results : " + firstname + " " + name,
                  fontSize:40,
                  fontStyle:'bold',
-                 padding:40
+                 padding:40,
+                 fontColor:'rgba(54, 162, 235,0.7)'
                },
                 scales: {
                   yAxes: [{
@@ -71,8 +68,8 @@
               }
             }
           )
-        }
-        )
+
+
 
 
       </script>

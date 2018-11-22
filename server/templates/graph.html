@@ -13,9 +13,6 @@
       <script type="text/javascript">
         const name = '{{nom}}';
         const firstname = '{{prenom}}';
-        console.log('coucou');
-        console.log(name);
-        console.log(firstname);
         //var filepath="../uploads/"+name+firstname+"Scores.json"
         var filepath="../uploads/EventCandidatAScores.json"
         //var file = "{{url_for('static', filename='../uploads/EventCandidatAScores.json')}}";
@@ -30,11 +27,11 @@
               labels:Object.keys(data),
               datasets: [
                  {
-                 label: "Candidat 1",
+                 label: firstname + " " + name,
                  data: Object.values(data),
                  backgroundColor: 'rgba(255, 99, 132, 0.2)'
                  },{
-                 label: "Moyenne",
+                 label: "Average",
                  data: [1,2,5,4,6,2],
                  backgroundColor: 'rgba(54, 162, 235, 0.2)'
                  }
@@ -43,7 +40,7 @@
             options:{
                title:{
                  display:true,
-                 text:"Results : " + name + firstname,
+                 text:"Results : " + firstname + " " + name,
                  fontSize:40,
                  fontStyle:'bold',
                  padding:40

@@ -2,14 +2,23 @@
 <html>
   <head>
     <title>Upload Doctolib</title>
+    <link href="{{ url_for('static', filename='style_test.css') }}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   </head>
   <body>
-    <h1>Now upload your test file</h1>
+    <br><br/>
+    <h1 class="w3-text-blue">Doctolib Platform</h1>
+    <br><br/>
+    <form class="w3-container w3-card-4" action="/action_page.php" method=post enctype=multipart/form-data>
+    <p>Now upload your test file</p>
     <form action="" method=post enctype=multipart/form-data>
-
-    <div>
-      Your test file : <br />
-      <input type="file" name="file" /><input type="submit" value="Upload" />
-    </div>
+      <p>
+            <label class="w3-text-blue"><b>Your test file :</b></label> <br />
+            <input type="file" name="file" />
+      <p/>
+      <p>
+            <input type="submit" value="Upload" />
+      <p/>
+    </form>
   </body>
 </html>

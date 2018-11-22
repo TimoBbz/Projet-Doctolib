@@ -1,6 +1,7 @@
 import os
 from flask import Flask, request, redirect, url_for, send_from_directory, render_template
-
+from code_analyser.main2 import from_ruby_to_json
+# import code_analyser
 
 UPLOAD_FOLDER = 'uploads/'
 ALLOWED_EXTENSIONS = set(['rb'])
@@ -14,8 +15,8 @@ def allowed_file(filename):
            filename.rsplit('.', 1)[1] in ALLOWED_EXTENSIONS
 
 
-name = ""
-first_name = ""
+name = "bekaddour"
+first_name = "leila"
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -49,7 +50,8 @@ def upload_test_file():
 
 @app.route('/done')
 def uploaded_file():
-    return render_template('graph.html', titre='Results')
+    from_ruby_to_json('uploads/'+name+first_name+'.rb', 'PastDatas')
+    return render_template('graph.html', titre='Results', nom=name, prenom=first_name)
 
 
 if __name__ == '__main__':

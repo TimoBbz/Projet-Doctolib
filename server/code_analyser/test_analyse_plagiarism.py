@@ -22,5 +22,5 @@ def test_get_files_list():
     Testing get_files_list
 
     """
-    assert ap.get_files_list("PastDatas") == [
-        'EventCandidatC.rb', 'EventCandidatB.rb']
+    assert ap.get_files_list("../PastDatas") == [
+        '../PastDatas/EventCandidatC.rb', '../PastDatas/EventCandidatB.rb']

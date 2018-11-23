@@ -11,6 +11,6 @@ def test_to_string():
     """
     string = "Ceci est une chaine\navec des \" et des \' voire des \\\n"
     list = ["Ceci est une chaine", "avec des \" et des \' voire des \\", ""]
-    path = "Examples/test_file.txt"
+    path = "../Examples/test_file.txt"
     assert string == ef.to_string(path)
     assert list == ef.to_list(path)

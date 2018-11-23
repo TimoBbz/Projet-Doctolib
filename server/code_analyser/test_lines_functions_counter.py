@@ -26,4 +26,4 @@ def test_tests_counter():
     Testing tests_counter
 
     """
-    assert tests_counter(['  test', 'a', 'z', '  tests', '']) == 2
+    assert number_counter(['  test', 'a', 'z', '  tests', '']) == 2
